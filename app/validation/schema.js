@@ -2,7 +2,7 @@ const Joi = require('@hapi/joi');
 
 const nameSchema = Joi.string().min(3).max(50);
 const releaseDateSchema = Joi.date().timestamp();
-const authorNameSchema = Joi.string().min(2).max(30)
+const authorNameSchema = Joi.string().min(2).max(30);
 
 module.exports.uuid = Joi.string().guid({ version: 'uuidv4' }).label('uuid');
 
