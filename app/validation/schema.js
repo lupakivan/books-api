@@ -1,15 +1,19 @@
 const Joi = require('@hapi/joi');
 
+const nameSchema = Joi.string().min(3).max(50);
+const releaseDateSchema = Joi.date().timestamp();
+const authorNameSchema = Joi.string().min(2).max(30)
+
 module.exports.uuid = Joi.string().guid({ version: 'uuidv4' }).label('uuid');
 
 module.exports.bookCreateObject = Joi.object({
-  name: Joi.string().min(3).max(50).required(),
-  releaseDate: Joi.date().timestamp().required(),
-  authorName: Joi.string().min(2).max(30).required(),
+  name: nameSchema.required(),
+  releaseDate: releaseDateSchema.required(),
+  authorName: authorNameSchema.required(),
 });
 
 module.exports.bookUpdateObject = Joi.object({
-  name: Joi.string().min(3).max(50),
-  releaseDate: Joi.date().timestamp(),
-  authorName: Joi.string().min(2).max(30),
+  name: nameSchema,
+  releaseDate: releaseDateSchema,
+  authorName: authorNameSchema,
 });
