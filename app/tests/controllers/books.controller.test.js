@@ -2,7 +2,7 @@ const Joi = require('@hapi/joi');
 
 const BookDTO = require('../../dto/book.dto');
 
-const BooksController = require('../../controllers/books.controller');
+const BooksController = require('../../v_controllers/books.controller');
 
 describe('BooksController', () => {
   describe('BooksController#getById', () => {

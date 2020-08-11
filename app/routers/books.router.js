@@ -1,7 +1,7 @@
 const Router = require('koa-router');
 const HttpStatus = require('http-status-codes');
 
-const BooksController = require('../controllers/books.controller');
+const BooksController = require('../v_controllers/books.controller');
 
 const booksRouter = new Router();
 const booksController = new BooksController();
